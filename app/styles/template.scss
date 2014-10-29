@@ -1,0 +1,32 @@
+.template_indicator{
+
+	margin-right: 5px;
+
+	&.active{
+		border: 1px solid red;
+	}
+}
+
+.template_carousel{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.block_editor{
+	border: 1px dotted black;
+	position:absolute;
+}
+
+.block_element{
+	display:block;
+	position:absolute;
+}
+
+.custom-indicator{
+	border: 1px solid #ccc;		
+	max-height: 200px;
+	overflow:hidden;
+}
+
+.scroller{
+}

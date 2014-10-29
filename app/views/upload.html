@@ -1,0 +1,23 @@
+<div>
+	<div data-ng-controller="UploaderCtrl" flow-init="{singleFile:true, target: server_url + 'api/index.php?action=upload'}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
+	
+        <div class="thumbnail" ng-hide="$flow.files.length">
+      	    <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" />
+        </div>
+
+    	<div>
+     	<input type="file" flow-btn flow-attrs="{accept:'image/*'}"/>
+
+		</div>
+
+	  	<p>
+	    	Only PNG,GIF,JPG files allowed.
+	  	</p>
+	
+		<div overlay="myOverlay">
+		    <p>
+			  {{progress}}
+		    </p>
+		</div>
+	</div>
+</div>

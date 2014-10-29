@@ -1,0 +1,36 @@
+<div ng-controller="EditorCtrl">
+	<div class="template_container" > 
+		<div class="template" style="position:relative; background-repeat: no-repeat" ng-style="{'width': template.width, 'height': template.height}">
+			<img ng-src="{{image.url}}" style="position:absolute; left: 0; top: 0;"/>
+			<div ng-repeat="block in template.blocks"  ng-class="block{{$index}}"   class="block_editor" ng-style="{'top': block.positionY, 'left': block.positionX, 'width': block.width, 'height': block.height}" ng-click="open($index)">
+				<div ng-repeat = "element in block.elements" class="block_element" ng-style="{'font-family': element.font, 'font-size': element.font_size, 'color': element.color, 'top': element.positionY, 'left': element.positionX}">
+					{{element.value}}
+				</div>
+			</div>
+		</div>
+
+	     <button ng-click="save()">
+	      Save
+	    </button> 
+	</div>
+    
+	<script type="text/ng-template" id="editorModal.html">
+ 	   <div class="modal-header">
+            <h3 class="modal-title">Enter your information</h3>
+        </div>
+        <div class="modal-body">
+			<div ng-repeat="block in template.blocks">
+			   <div ng-class="block{{$index}}"  ng-show="{{$index == selected}}">
+					<div ng-repeat="element in block.elements">
+					    <input bs-form-control ng-model="block.elements[$index].temp" label="{{element.label}}" placeholder="{{element.placeholder}}" type="{{element.field_type}}" />
+					</div>
+			   </div>
+			</div>
+
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+	</script>
+</div>

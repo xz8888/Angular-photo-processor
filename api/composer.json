@@ -1,0 +1,10 @@
+{
+    "require": {
+        "imagine/imagine": "~0.5.0",
+        "flowjs/flow-php-server": "~0.2.1"
+    },
+
+    "autoload":{
+    	"psr-4": {"BabyMoment\\": "lib/"}
+    }
+}
